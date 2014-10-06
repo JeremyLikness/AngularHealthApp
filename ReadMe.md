@@ -52,6 +52,10 @@ controller is added. The resulting controller and filter are wired into the appl
 for choosing gender. Note the similarities between the metric and gender toggle. This is a great opportunity to 
 refactor into a common template using an Angular directive.
 
-The Angular directive uses a template for the repeated structure of the control. It defines several variables that are
+14 - The Angular directive uses a template for the repeated structure of the control. It defines several variables that are
 wired based on the UI. The various levels of scope isolation are demonstrated and the reusable directive is 
-implemented and verified to behave consistently. 
+implemented and verified to behave consistently.
+ 
+The specification for the user controller is enhanced to include scenarios relating to the user's height. It should
+correctly track height and convert for the UI as needed based on the unit of measure selection. The tests fail because
+the height functionality has not yet been implemented.
