@@ -28,5 +28,10 @@ so they are validated Boolean and toggle appropriately. This allows the tests to
 
 08 - The user profile and conversion libraries were both added and implemented so that all tests pass.
  
-For Angular to use the various components they must be registered with the dependency injection service. A set of 
+09 - For Angular to use the various components they must be registered with the dependency injection service. A set of 
 specifications validates the registration, but current fail because the components have not yet been registered.
+
+Now the services have been added. Note that two Angular shortcuts are used. The factory is used to return a reference
+to the functions, while the service function is used to pass the function constructor. The end result is the same: 
+a named reference to a component, it's just the way the component is provided that differs. It is perfectly valid to
+collapse the definitions into a single file since they are really just proxies to the pure JavaScript definitions.
