@@ -36,6 +36,12 @@ to the functions, while the service function is used to pass the function constr
 a named reference to a component, it's just the way the component is provided that differs. It is perfectly valid to
 collapse the definitions into a single file since they are really just proxies to the pure JavaScript definitions.
 
-To wire up the UI, two things are needed for the unit of measure. First, a controller to act as "glue" between the
+11 - To wire up the UI, two things are needed for the unit of measure. First, a controller to act as "glue" between the
 service and the UI, and second, a filter to make a "readable" version of the current unit of measure. The 
 specifications for these have been added, but are failing because the components themselves aren't written yet.
+
+The controller simply takes in a dependency on the unit of measure service and saves it to expose for data-binding.
+Using this approach ensures any components in the system are working with the same "copy" of the unit of measure 
+state. The UI is wired to use the controller and the filter to expose a button. The button displays the current state
+of the unit of measure, and toggles between states when clicked using the exposed toggle method on the unit of 
+measure component.

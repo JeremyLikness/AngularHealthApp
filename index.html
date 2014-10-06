@@ -4,11 +4,31 @@
     <meta charset="UTF-8">
     <title>Health Calculator App</title>
     <script type="text/javascript" src="lib/angular/angular.js"></script>
-    <script tpye="text/javascript" src="app/main.js"></script>
+    <script type="text/javascript" src="app/common/UnitOfMeasureState.js"></script>
+    <script type="text/javascript" src="app/common/UserProfile.js"></script>
+    <script type="text/javascript" src="app/common/Conversions.js"></script>
+    <script type="text/javascript" src="app/common/formulaBmr.js"></script>
+    <script type="text/javascript" src="app/common/formulaBmi.js"></script>
+    <script type="text/javascript" src="app/common/formulaThr.js"></script>
+    <script type="text/javascript" src="app/main.js"></script>
+    <script type="text/javascript" src="app/services/uomService.js"></script>
+    <script type="text/javascript" src="app/services/userProfileService.js"></script>
+    <script type="text/javascript" src="app/services/conversionService.js"></script>
+    <script type="text/javascript" src="app/services/formulaBmrService.js"></script>
+    <script type="text/javascript" src="app/services/formulaBmiService.js"></script>
+    <script type="text/javascript" src="app/services/formulaThrService.js"></script>
+    <script type="text/javascript" src="app/filters/uomFilter.js"></script>
+    <script type="text/javascript" src="app/controllers/uomController.js"></script>
 </head>
 <body ng-app="healthApp">
-    {{ 1 + 2 }}
-    <div ng-if="true">True</div>
-    <div ng-if="false">False</div>
+    <h1>Health Calculator</h1>
+    <div ng-controller="uomCtrl as ctrl">
+        <div>
+            <div>Click to Toggle Unit of Measure:</div>
+            <div>
+                <button ng-click="ctrl.uomService.toggle()">{{ctrl.uomService.usMeasure | uom}}</button>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
