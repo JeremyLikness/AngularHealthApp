@@ -1,0 +1,42 @@
+body {
+    font-family: arial, verdana, sans-serif;
+    line-height: 1.2em;
+}
+
+h1 {
+    font-size: 2.0em;
+    font-weight: bold;
+    color: darkblue;
+}
+
+button {
+    width: 60px;
+    border-color: black;
+    border-radius: 0px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+}
+
+div.unit {
+    min-width: 200px;
+    max-width: 310px;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+}
+
+.label {
+    max-width: 60%;
+    float: left;
+    font-weight: bold;
+    text-align: right;
+    padding-right: 5px;
+    vertical-align: middle;
+}
+
+.labelTarget {
+    float: left;
+    text-align: left;
+    vertical-align: middle;
+}

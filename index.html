@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Health Calculator App</title>
+    <link rel="stylesheet" type="text/css" href="content/style/main.css"/>
     <script type="text/javascript" src="lib/angular/angular.js"></script>
     <script type="text/javascript" src="app/common/UnitOfMeasureState.js"></script>
     <script type="text/javascript" src="app/common/UserProfile.js"></script>
@@ -27,9 +28,9 @@
 <body ng-app="healthApp">
 
 <script type="text/ng-template" id="height.html">
-    <div>
-        <div>Height:</div>
-        <div>
+    <div class="unit">
+        <div class="label">Height:</div>
+        <div class="labelTarget">
             {{ctrl.minHeightRange | height:false}}
             <input type="range" step="1" min="{{ctrl.minHeightRange}}" max="{{ctrl.maxHeightRange}}" ng-model="ctrl.heightValue"/>
             {{ctrl.maxHeightRange | height:false}}
