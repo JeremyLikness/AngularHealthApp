@@ -26,4 +26,7 @@ failing tests because the resulting objects need to be created and modified to s
 capture an internal set of flags for the measure. ECMAScript 5 properties are used to encapsulate access to the values
 so they are validated Boolean and toggle appropriately. This allows the tests to pass.
 
-The user profile and conversion libraries were both added and implemented so that all tests pass. 
+08 - The user profile and conversion libraries were both added and implemented so that all tests pass.
+ 
+For Angular to use the various components they must be registered with the dependency injection service. A set of 
+specifications validates the registration, but current fail because the components have not yet been registered.
