@@ -16,8 +16,12 @@ is now related to the result being undefined.
 
 05 - Next, the BMI formula is applied to the function and the tests now pass.
  
-The specifications and functions for the BMR and THR formulas have been added and passed. Now there are three more 
+06 - The specifications and functions for the BMR and THR formulas have been added and passed. Now there are three more 
 items to consider. First is a unit of measure state so that the user can switch between Imperial (U.S.) and Metric.
 The next is a conversion library to convert between the units of measure, assuming they will be stored internally
 as U.S., and finally there is a user profile to hold the information needed by the formulas. This results in 18 
 failing tests because the resulting objects need to be created and modified to satisfy the tests.
+
+The unit of measure state object uses a JavaScript constructor to create an instance. It takes advantage of scope to
+capture an internal set of flags for the measure. ECMAScript 5 properties are used to encapsulate access to the values
+so they are validated Boolean and toggle appropriately. This allows the tests to pass.
