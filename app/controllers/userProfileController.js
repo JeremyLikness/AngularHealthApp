@@ -1,6 +1,6 @@
 (function (app) {
 
-    var weightVal, wasMetric;
+    var weightVal, wasMetric, ageValue;
 
     function Controller (userProfileService, uomService, conversionService) {
         this.userProfileService = userProfileService;
@@ -9,6 +9,7 @@
         weightVal = uomService.usMeasure ? userProfileService.weightPounds :
             conversionService.poundsToKilograms(userProfileService.weightPounds);
         wasMetric = uomService.metricMeasure;
+        ageValue = userProfileService.ageYears;
     }
 
     Object.defineProperty(Controller.prototype, "minHeightRange", {
@@ -45,7 +46,7 @@
         enumerable: true,
         configurable: false,
         get: function() {
-            return wasMetric ? 9 : 20;
+            return this.uomService.metricMeasure ? 9 : 20;
         }
     });
 
@@ -53,7 +54,7 @@
         enumerable: true,
         configurable: false,
         get: function() {
-            return wasMetric ? 182: 400;
+            return this.uomService.metricMeasure ? 182: 400;
         }
     });
 
@@ -81,6 +82,21 @@
             }
             if (adjustedWeight >= 20 && adjustedWeight <= 400) {
                 this.userProfileService.weightPounds = adjustedWeight;
+            }
+        }
+    });
+
+    Object.defineProperty(Controller.prototype, "ageValue", {
+        enumerable: true,
+        configurable: false,
+        get: function () {
+            return ageValue;
+        },
+        set: function (val) {
+            var incoming = Number(val);
+            ageValue = val;
+            if (incoming >= 13 && incoming <= 120) {
+                this.userProfileService.ageYears = incoming;
             }
         }
     });

@@ -58,6 +58,22 @@
     </div>
 </script>
 
+<script type="text/ng-template" id="age.html">
+    <div class="unit">
+        <div class="label">Age (13 - 120):</div>
+        <div class="labelTarget">
+            <input name="age"
+                   min="13"
+                   max="120"
+                   id="age"
+                   type="number"
+                   required=""
+                   ng-class="{ error : ctrl.form.age.$invalid }"
+                   ng-model="ctrl.ageValue"/>years
+        </div>
+    </div>
+</script>
+
     <h1>Health Calculator</h1>
     <div ng-controller="uomCtrl as ctrl">
         <toggle-block label="Click to Toggle Unit of Measure:"
@@ -71,6 +87,7 @@
                           toggle-function="ctrl.userProfileService.toggleGender()"></toggle-block>
             <div ng-include="'height.html'"></div>
             <div ng-include="'weight.html'"></div>
+            <div ng-include="'age.html'"></div>
         </form>
     </div>
 </body>

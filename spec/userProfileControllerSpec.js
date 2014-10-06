@@ -109,4 +109,22 @@ describe("User profile controller", function() {
         });
     });
 
+    describe("Given controller when age is set to valid range of 13 - 120 years", function () {
+        it("then should update on the user profile", function () {
+            userProfileSvc.ageYears = 40;
+            userProfileController.ageValue = 100;
+            expect(userProfileSvc.ageYears).toBeCloseTo(100);
+        });
+    });
+
+    describe("Given controller when age is set to invalid value or range outside of 13 - 120 years", function () {
+        it("then should not update on the user profile", function () {
+            userProfileSvc.age = 40;
+            userProfileController.ageValue = 0;
+            expect(userProfileSvc.age).toBeCloseTo(40);
+            userProfileController.ageValue = "invalid";
+            expect(userProfileSvc.age).toBeCloseTo(40);
+        });
+    });
+
 });

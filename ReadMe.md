@@ -76,7 +76,10 @@ ensure the user profile is never populated with an invalid weight. The specifica
 with the necessary filter to show the proper unit of measure. These are failing because the weight functionality has
 not yet been implemented.
 
-The weight form and styles are added and the conversion is now testable using the input field. For weights within the
+19 - The weight form and styles are added and the conversion is now testable using the input field. For weights within the
 range the conversion works seamlessly when the unit of measure is changed. The user profile was updated to capture the
 most recent unit of measure. This way when the unit of measure changes, it can convert the weight values for exposure
 to the UI. This should only happen at the precise moment of conversion; not before or after. 
+
+The age specifications are added and age input implemented in the UI. Now the user profile is complete and we can focus
+on exposing the formulas.
