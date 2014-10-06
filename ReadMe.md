@@ -14,4 +14,10 @@ correctly. Of course, because there is no function the code will fail at first.
 message that the function is undefined. Once the function is defined and added to the test harness, you see the failure
 is now related to the result being undefined.
 
-Next, the BMI formula is applied to the function and the tests now pass. 
+05 - Next, the BMI formula is applied to the function and the tests now pass.
+ 
+The specifications and functions for the BMR and THR formulas have been added and passed. Now there are three more 
+items to consider. First is a unit of measure state so that the user can switch between Imperial (U.S.) and Metric.
+The next is a conversion library to convert between the units of measure, assuming they will be stored internally
+as U.S., and finally there is a user profile to hold the information needed by the formulas. This results in 18 
+failing tests because the resulting objects need to be created and modified to satisfy the tests.
