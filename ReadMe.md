@@ -10,6 +10,8 @@ the tests will run against the app.
 03 - The app is for a health calculator, so one of the first specifications is to ensure the formula for BMI calculates 
 correctly. Of course, because there is no function the code will fail at first.
 
-The easiest way to make the specification to pass is to define the function because it is failing with the 
+04 - The easiest way to make the specification to pass is to define the function because it is failing with the 
 message that the function is undefined. Once the function is defined and added to the test harness, you see the failure
 is now related to the result being undefined.
+
+Next, the BMI formula is applied to the function and the tests now pass. 
