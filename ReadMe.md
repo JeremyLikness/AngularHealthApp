@@ -40,8 +40,14 @@ collapse the definitions into a single file since they are really just proxies t
 service and the UI, and second, a filter to make a "readable" version of the current unit of measure. The 
 specifications for these have been added, but are failing because the components themselves aren't written yet.
 
-The controller simply takes in a dependency on the unit of measure service and saves it to expose for data-binding.
+12 - The controller simply takes in a dependency on the unit of measure service and saves it to expose for data-binding.
 Using this approach ensures any components in the system are working with the same "copy" of the unit of measure 
 state. The UI is wired to use the controller and the filter to expose a button. The button displays the current state
 of the unit of measure, and toggles between states when clicked using the exposed toggle method on the unit of 
 measure component.
+
+Next, the user profile is integrated into the application. The first part of the profile is gender. A gender filter
+is needed to show whether the user is male or female, so a specification for the filter and another one for the 
+controller is added. The resulting controller and filter are wired into the application and used to create a toggle
+for choosing gender. Note the similarities between the metric and gender toggle. This is a great opportunity to 
+refactor into a common template using an Angular directive.
