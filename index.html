@@ -21,6 +21,7 @@
     <script type="text/javascript" src="app/filters/uomFilter.js"></script>
     <script type="text/javascript" src="app/filters/genderFilter.js"></script>
     <script type="text/javascript" src="app/filters/heightFilter.js"></script>
+    <script type="text/javascript" src="app/filters/weightFilter.js"></script>
     <script type="text/javascript" src="app/directives/toggleBlock.js"></script>
     <script type="text/javascript" src="app/controllers/uomController.js"></script>
     <script type="text/javascript" src="app/controllers/userProfileController.js"></script>
@@ -40,6 +41,23 @@
     </div>
 </script>
 
+<script type="text/ng-template" id="weight.html">
+    <div class="unit">
+        <div class="label">Weight ({{ctrl.minWeightRange}} - {{ctrl.maxWeightRange}}):</div>
+        <div class="labelTarget">
+            <input name="weight"
+                   id="weight"
+                   type="number"
+                   required=""
+                   ng-class="{ error : ctrl.form.weight.$invalid }"
+                   ng-model="ctrl.weightValue"
+                   min="{{ctrl.minWeightRange}}"
+                   max="{{ctrl.maxWeightRange}}"/>
+            {{ctrl.uomService.usMeasure | weight}}
+        </div>
+    </div>
+</script>
+
     <h1>Health Calculator</h1>
     <div ng-controller="uomCtrl as ctrl">
         <toggle-block label="Click to Toggle Unit of Measure:"
@@ -47,10 +65,13 @@
                       toggle-function="ctrl.uomService.toggle()"></toggle-block>
     </div>
     <div ng-controller="userProfileCtrl as ctrl">
-        <toggle-block label="Click to Toggle Gender:"
-                      button-text="ctrl.userProfileService.isMale | gender"
-                      toggle-function="ctrl.userProfileService.toggleGender()"></toggle-block>
-        <div ng-include="'height.html'"></div>
+        <form name="ctrl.form" nosubmi="">
+            <toggle-block label="Click to Toggle Gender:"
+                          button-text="ctrl.userProfileService.isMale | gender"
+                          toggle-function="ctrl.userProfileService.toggleGender()"></toggle-block>
+            <div ng-include="'height.html'"></div>
+            <div ng-include="'weight.html'"></div>
+        </form>
     </div>
 </body>
 </html>

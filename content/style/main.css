@@ -26,6 +26,10 @@ div.unit {
     padding: 5px;
 }
 
+input.error {
+    border: 2px solid red;
+}
+
 .label {
     max-width: 60%;
     float: left;

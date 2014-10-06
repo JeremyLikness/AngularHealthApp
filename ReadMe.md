@@ -71,7 +71,12 @@ the properties depend on each other and Angular will automatically reevaluate th
 17 - A quick pass at styling makes for consistent UI elements and allows them to flow to fill the space. The app is now 
 responsive to wide and small (mobile) configurations.
 
-Weight specifications have been added. The weight input will be free form, so additional validation must exist to 
+18 - Weight specifications have been added. The weight input will be free form, so additional validation must exist to 
 ensure the user profile is never populated with an invalid weight. The specifications detail these requirements along
 with the necessary filter to show the proper unit of measure. These are failing because the weight functionality has
 not yet been implemented.
+
+The weight form and styles are added and the conversion is now testable using the input field. For weights within the
+range the conversion works seamlessly when the unit of measure is changed. The user profile was updated to capture the
+most recent unit of measure. This way when the unit of measure changes, it can convert the weight values for exposure
+to the UI. This should only happen at the precise moment of conversion; not before or after. 
