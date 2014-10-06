@@ -18,6 +18,20 @@ button {
     padding: 5px;
 }
 
+div.break {
+    clear: both;
+}
+
+div.tile {
+    width: 290px;
+    height: 150px;
+    float: left;
+    margin: 5px;
+    padding: 5px;
+    background: lightblue;
+    border: solid 2px darkblue;
+}
+
 div.unit {
     min-width: 200px;
     max-width: 310px;

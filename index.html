@@ -25,6 +25,7 @@
     <script type="text/javascript" src="app/directives/toggleBlock.js"></script>
     <script type="text/javascript" src="app/controllers/uomController.js"></script>
     <script type="text/javascript" src="app/controllers/userProfileController.js"></script>
+    <script type="text/javascript" src="app/controllers/formulaController.js"></script>
 </head>
 <body ng-app="healthApp">
 
@@ -90,5 +91,15 @@
             <div ng-include="'age.html'"></div>
         </form>
     </div>
+
+    <div class="break"></div>
+
+    <div ng-controller="formulaCtrl as ctrl">
+        <div class="tile" title="Basal Metabolic Rate">
+            <h1>BMR:</h1>
+            <h2>{{ctrl.bmrValue}} Calories</h2>
+        </div>
+    </div>
+
 </body>
 </html>
