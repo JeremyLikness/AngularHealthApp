@@ -89,3 +89,7 @@ simply reiterates some of the formula tests and verifies given a certain user pr
 is expected from the formula. In this example the first tile for Basal Metabolic Rate is implemented along with styles
 and you can watch it update as you manipulate the user profile values.
 
+22 - The specs for the BMI filter, implementation of the filter, and classes to show colors are added and the final
+tiles added (BMI, THR). 
+
+Application is complete!
