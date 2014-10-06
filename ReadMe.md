@@ -46,8 +46,12 @@ state. The UI is wired to use the controller and the filter to expose a button. 
 of the unit of measure, and toggles between states when clicked using the exposed toggle method on the unit of 
 measure component.
 
-Next, the user profile is integrated into the application. The first part of the profile is gender. A gender filter
+13 - Next, the user profile is integrated into the application. The first part of the profile is gender. A gender filter
 is needed to show whether the user is male or female, so a specification for the filter and another one for the 
 controller is added. The resulting controller and filter are wired into the application and used to create a toggle
 for choosing gender. Note the similarities between the metric and gender toggle. This is a great opportunity to 
 refactor into a common template using an Angular directive.
+
+The Angular directive uses a template for the repeated structure of the control. It defines several variables that are
+wired based on the UI. The various levels of scope isolation are demonstrated and the reusable directive is 
+implemented and verified to behave consistently. 

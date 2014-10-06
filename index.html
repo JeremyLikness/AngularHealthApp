@@ -19,26 +19,21 @@
     <script type="text/javascript" src="app/services/formulaThrService.js"></script>
     <script type="text/javascript" src="app/filters/uomFilter.js"></script>
     <script type="text/javascript" src="app/filters/genderFilter.js"></script>
+    <script type="text/javascript" src="app/directives/toggleBlock.js"></script>
     <script type="text/javascript" src="app/controllers/uomController.js"></script>
     <script type="text/javascript" src="app/controllers/userProfileController.js"></script>
 </head>
 <body ng-app="healthApp">
     <h1>Health Calculator</h1>
     <div ng-controller="uomCtrl as ctrl">
-        <div>
-            <div>Click to Toggle Unit of Measure:</div>
-            <div>
-                <button ng-click="ctrl.uomService.toggle()">{{ctrl.uomService.usMeasure | uom}}</button>
-            </div>
-        </div>
+        <toggle-block label="Click to Toggle Unit of Measure:"
+                      button-text="ctrl.uomService.usMeasure | uom"
+                      toggle-function="ctrl.uomService.toggle()"></toggle-block>
     </div>
     <div ng-controller="userProfileCtrl as ctrl">
-        <div>
-            <div>Click to Toggle Gender:</div>
-            <div>
-                <button ng-click="ctrl.userProfileService.toggleGender()">{{ctrl.userProfileService.isMale | gender}}</button>
-            </div>
-        </div>
+        <toggle-block label="Click to Toggle Gender:"
+                      button-text="ctrl.userProfileService.isMale | gender"
+                      toggle-function="ctrl.userProfileService.toggleGender()"></toggle-block>
     </div>
 </body>
 </html>
