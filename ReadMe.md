@@ -68,5 +68,10 @@ to expose the height and weight values and the UI updated with a slider. Notice 
 well as toggle the unit of measure and see it all reflected dynamically. There is no special messaging or watch because
 the properties depend on each other and Angular will automatically reevaluate the values when the model is mutated.
 
-A quick pass at styling makes for consistent UI elements and allows them to flow to fill the space. The app is now 
+17 - A quick pass at styling makes for consistent UI elements and allows them to flow to fill the space. The app is now 
 responsive to wide and small (mobile) configurations.
+
+Weight specifications have been added. The weight input will be free form, so additional validation must exist to 
+ensure the user profile is never populated with an invalid weight. The specifications detail these requirements along
+with the necessary filter to show the proper unit of measure. These are failing because the weight functionality has
+not yet been implemented.

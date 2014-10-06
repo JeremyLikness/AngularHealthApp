@@ -59,4 +59,54 @@ describe("User profile controller", function() {
         });
     });
 
+    describe("Given controller when weight is 130 pounds and unit of measure is U.S.", function () {
+        beforeEach(function () {
+            uomSvc.usMeasure = true;
+        });
+        it("then should expose 20 pounds for minimum weight range", function () {
+            expect(userProfileController.minWeightRange).toBe(20);
+        });
+        it("then should expose 400 pounds for maximum weight range", function () {
+            expect(userProfileController.maxWeightRange).toBe(400);
+        });
+        it("then should expose 130 pounds for weight value", function () {
+            expect(userProfileController.weightValue).toBeCloseTo(130);
+        });
+    });
+
+    describe("Given controller when weight is 130 pounds and unit of measure is kilograms", function () {
+        beforeEach(function () {
+            uomSvc.metricMeasure = true;
+        });
+        it("then should expose 9 kilograms for minimum weight range", function () {
+            expect(userProfileController.minWeightRange).toBe(9);
+        });
+        it("then should expose 182 kilograms for maximum weight range", function () {
+            expect(userProfileController.maxWeightRange).toBe(182);
+        });
+        it("then should expose 58.957 kilograms for weight value", function () {
+            expect(userProfileController.weightValue).toBeCloseTo(58.957);
+        });
+    });
+
+    describe("Given controller when weight is set to valid range of 20 - 400 pounds", function () {
+        it("then should update on the user profile", function () {
+            uomSvc.usMeasure = true;
+            userProfileSvc.weightPounds = 130;
+            userProfileController.weightValue = 100;
+            expect(userProfileSvc.weightPounds).toBeCloseTo(100);
+        });
+    });
+
+    describe("Given controller when weight is set to invalid value or range outside of 20 - 400 pounds", function () {
+        it("then should not update on the user profile", function () {
+            uomSvc.usMeasure = true;
+            userProfileSvc.weightPounds = 130;
+            userProfileController.weightValue = 0;
+            expect(userProfileSvc.weightPounds).toBeCloseTo(130);
+            userProfileController.weightValue = "invalid";
+            expect(userProfileSvc.weightPounds).toBeCloseTo(130);
+        });
+    });
+
 });
