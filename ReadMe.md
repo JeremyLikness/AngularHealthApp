@@ -22,6 +22,8 @@ The next is a conversion library to convert between the units of measure, assumi
 as U.S., and finally there is a user profile to hold the information needed by the formulas. This results in 18 
 failing tests because the resulting objects need to be created and modified to satisfy the tests.
 
-The unit of measure state object uses a JavaScript constructor to create an instance. It takes advantage of scope to
+07 - The unit of measure state object uses a JavaScript constructor to create an instance. It takes advantage of scope to
 capture an internal set of flags for the measure. ECMAScript 5 properties are used to encapsulate access to the values
 so they are validated Boolean and toggle appropriately. This allows the tests to pass.
+
+The user profile and conversion libraries were both added and implemented so that all tests pass. 
