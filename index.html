@@ -22,6 +22,7 @@
     <script type="text/javascript" src="app/filters/genderFilter.js"></script>
     <script type="text/javascript" src="app/filters/heightFilter.js"></script>
     <script type="text/javascript" src="app/filters/weightFilter.js"></script>
+    <script type="text/javascript" src="app/filters/bmiFilter.js"></script>
     <script type="text/javascript" src="app/directives/toggleBlock.js"></script>
     <script type="text/javascript" src="app/controllers/uomController.js"></script>
     <script type="text/javascript" src="app/controllers/userProfileController.js"></script>
@@ -98,6 +99,17 @@
         <div class="tile" title="Basal Metabolic Rate">
             <h1>BMR:</h1>
             <h2>{{ctrl.bmrValue}} Calories</h2>
+        </div>
+        <div class="tile"
+             ng-class="ctrl.bmiValue | bmi"
+             title="Body Mass Index">
+            <h1>BMI:</h1>
+            <h2>{{ctrl.bmiValue}}</h2>
+            <b>{{ctrl.bmiValue | bmi}}</b>
+        </div>
+        <div class="tile" title="Target Heart Rate">
+            <h1>THR (50%-85%):</h1>
+            <h2>{{ctrl.thrValue.min}} &mdash; {{ctrl.thrValue.max}} BPM</h2>
         </div>
     </div>
 

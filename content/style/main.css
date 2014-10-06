@@ -40,6 +40,18 @@ div.unit {
     padding: 5px;
 }
 
+div.Obese {
+    background: red;
+}
+
+div.Overweight {
+    background: lightcoral;
+}
+
+div.Underweight {
+    background: lightcoral;
+}
+
 input.error {
     border: 2px solid red;
 }

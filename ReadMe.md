@@ -84,7 +84,8 @@ to the UI. This should only happen at the precise moment of conversion; not befo
 20 - The age specifications are added and age input implemented in the UI. Now the user profile is complete and we can focus
 on exposing the formulas.
 
-For the formulas, a formula controller pulls in all of the dependencies and exposes the various values. The specification
+21 - For the formulas, a formula controller pulls in all of the dependencies and exposes the various values. The specification
 simply reiterates some of the formula tests and verifies given a certain user profile, the values exposed match what
 is expected from the formula. In this example the first tile for Basal Metabolic Rate is implemented along with styles
 and you can watch it update as you manipulate the user profile values.
+
