@@ -19,11 +19,26 @@
     <script type="text/javascript" src="app/services/formulaThrService.js"></script>
     <script type="text/javascript" src="app/filters/uomFilter.js"></script>
     <script type="text/javascript" src="app/filters/genderFilter.js"></script>
+    <script type="text/javascript" src="app/filters/heightFilter.js"></script>
     <script type="text/javascript" src="app/directives/toggleBlock.js"></script>
     <script type="text/javascript" src="app/controllers/uomController.js"></script>
     <script type="text/javascript" src="app/controllers/userProfileController.js"></script>
 </head>
 <body ng-app="healthApp">
+
+<script type="text/ng-template" id="height.html">
+    <div>
+        <div>Height:</div>
+        <div>
+            {{ctrl.minHeightRange | height:false}}
+            <input type="range" step="1" min="{{ctrl.minHeightRange}}" max="{{ctrl.maxHeightRange}}" ng-model="ctrl.heightValue"/>
+            {{ctrl.maxHeightRange | height:false}}
+            <br/>
+            {{ctrl.userProfileService.heightInches | height}}
+        </div>
+    </div>
+</script>
+
     <h1>Health Calculator</h1>
     <div ng-controller="uomCtrl as ctrl">
         <toggle-block label="Click to Toggle Unit of Measure:"
@@ -34,6 +49,7 @@
         <toggle-block label="Click to Toggle Gender:"
                       button-text="ctrl.userProfileService.isMale | gender"
                       toggle-function="ctrl.userProfileService.toggleGender()"></toggle-block>
+        <div ng-include="'height.html'"></div>
     </div>
 </body>
 </html>

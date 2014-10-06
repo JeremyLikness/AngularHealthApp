@@ -56,6 +56,14 @@ refactor into a common template using an Angular directive.
 wired based on the UI. The various levels of scope isolation are demonstrated and the reusable directive is 
 implemented and verified to behave consistently.
  
-The specification for the user controller is enhanced to include scenarios relating to the user's height. It should
+15 - The specification for the user controller is enhanced to include scenarios relating to the user's height. It should
 correctly track height and convert for the UI as needed based on the unit of measure selection. The tests fail because
 the height functionality has not yet been implemented.
+
+The height functionality required an additional height filter specification. The height filter is a bit different for
+two reasons. First, it depends on other services so it is the first example of a filter with a dependency. Second, it
+should not attempt to convert the input value if it is a min/max range value because this is hard-coded on the 
+controller. Therefore, it takes a parameter to avoid the conversion step for those ranges. The controller was updated
+to expose the height and weight values and the UI updated with a slider. Notice that you can now change the weight as
+well as toggle the unit of measure and see it all reflected dynamically. There is no special messaging or watch because
+the properties depend on each other and Angular will automatically reevaluate the values when the model is mutated.
