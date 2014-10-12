@@ -1,6 +1,26 @@
 Angular Health App
 ==================
 
+Instructions:
+-------------
+
+First, clone the repository:
+
+    git clone https://github.com/JeremyLikness/AngularHealthApp.git
+
+Next, start with step 1: 
+
+    git checkout 17e9892
+
+Finally, follow the deck online at: 
+
+http://www.slideshare.net/jeremylikness/lets-build-an-angular-app 
+
+That will show the checkout for each step. Notes for each step follows.
+
+Steps:
+------
+
 01 - This is the shell for the Angular health app. It is the minimum needed for a working Angular application and a
 ready-made test harness.
 
