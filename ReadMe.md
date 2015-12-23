@@ -1,6 +1,10 @@
 Angular Health App
 ==================
 
+This is a walkthrough for building an Angular 1.x application using test-driven development. 
+
+Check out the [ECMAScript6 or ECMAScript2015 version](https://github.com/JeremyLikness/AngularES6HealthApp) and the [Angular 2 port](https://github.com/JeremyLikness/Angular2HealthApp/) of this same app.
+
 Instructions:
 -------------
 
